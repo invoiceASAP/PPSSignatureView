@@ -7,10 +7,10 @@ Pod::Spec.new do |s|
 
                     Techniques are described in blog entry: [Capture a Signature on iOS](https://www.altamiracorp.com/blog/employee-posts/capture-a-signature-on-ios)
                    DESC
-  s.homepage     = "https://github.com/invoiceASAP/PPSSignatureView"
+  s.homepage     = "https://github.com/jharwig/PPSSignatureView"
   s.license      = 'MIT'
   s.author       = { "jharwig" => "jason@pinepointsoftware.com" }
-  s.source       = { :git => "https://github.com/invoiceASAP/PPSSignatureView.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/ronaldsmartin/PPSSignatureView.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '5.0'
   s.ios.deployment_target = '5.0'
