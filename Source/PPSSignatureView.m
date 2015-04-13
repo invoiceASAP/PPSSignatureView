@@ -149,6 +149,9 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
         UILongPressGestureRecognizer *longer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
         longer.cancelsTouchesInView = YES;
         [self addGestureRecognizer:longer];
+
+        // By default, enable the long-press erase gesture. This can be overriden in IB or programmatically.
+        self.longPressEraseEnabled = YES;
         
     } else [NSException raise:@"NSOpenGLES2ContextException" format:@"Failed to create OpenGL ES2 context"];
 }
@@ -273,7 +276,9 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
 
 
 - (void)longPress:(UILongPressGestureRecognizer *)lp {
-    [self erase];
+    if (self.longPressEraseEnabled) {
+        [self erase];
+    }
 }
 
 - (void)pan:(UIPanGestureRecognizer *)p {

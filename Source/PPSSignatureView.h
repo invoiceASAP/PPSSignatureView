@@ -7,6 +7,7 @@
 @property (assign, nonatomic) BOOL hasSignature;
 @property (strong, nonatomic) UIImage *signatureImage;
 
+@property (nonatomic) IBInspectable BOOL longPressEraseEnabled;
 - (void)erase;
 
 @end
